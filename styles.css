@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    font-family: 'Orbitron', sans-serif; /* Apply Orbitron font */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.typewriter, .thank-you {
+    font-size: 5rem;
+    color: #00ff99;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    cursor: default;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes move-line {
+    0% {
+        width: 0;
+        top: 100%;
+        left: 0;
+        opacity: 1;
+    }
+    25% {
+        width: 100%;
+        top: 100%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        top: -2px;
+        left: 0;
+    }
+    75% {
+        width: 0;
+        top: -2px;
+        left: 100%;
+    }
+    100% {
+        width: 0;
+        top: 100%;
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.line-moving {
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00ff99;
+    animation: move-line 4s linear 1;
+    opacity: 0;
+}
+
+.typewriter {
+    animation: typing 3s steps(15) forwards 1s;
+}
+
+.thank-you {
+    display: none;
+    animation: typing 3s steps(9) forwards;
+}
+
+.typewriter:hover, .thank-you:hover {
+    color: #ff0066;
+    text-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066, 0 0 45px #ff0066;
+}
