@@ -1,3 +1,4 @@
+/* General Reset for Margin and Height */
 body {
     margin: 0;
     height: 100vh;
@@ -5,31 +6,60 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #000;
-    font-family: 'Orbitron', sans-serif; /* Apply Orbitron font */
+    font-family: 'Orbitron', sans-serif;
 }
 
+/* Container for Centering the Content */
 .container {
     text-align: center;
+    width: 100%;
+    max-width: 600px; /* Max width for larger screens */
+    padding: 0 20px; /* Padding to ensure space on smaller screens */
     position: relative;
 }
 
+/* Typewriter and Thank You Message Styling */
 .typewriter, .thank-you {
-    font-size: 5rem;
+    font-size: 3rem; /* Adjusted for mobile, can scale on larger screens */
     color: #00ff99;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     width: 0;
     cursor: default;
+    display: inline-block;
+    animation: typing 3s steps(15) forwards 1s;
 }
 
+/* Thank You Message Hidden Initially */
+.thank-you {
+    display: none;
+    animation: typing 3s steps(9) forwards;
+}
+
+/* Line Animation for Underlining Effect */
+.line-moving {
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00ff99;
+    animation: move-line 4s linear 1;
+    opacity: 0;
+}
+
+/* Hover Effect with Glow */
+.typewriter:hover, .thank-you:hover {
+    color: #ff0066;
+    text-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066, 0 0 45px #ff0066;
+}
+
+/* Typing Effect Animation */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
+/* Line Animation */
 @keyframes move-line {
     0% {
         width: 0;
@@ -60,25 +90,9 @@ body {
     }
 }
 
-.line-moving {
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #00ff99;
-    animation: move-line 4s linear 1;
-    opacity: 0;
-}
-
-.typewriter {
-    animation: typing 3s steps(15) forwards 1s;
-}
-
-.thank-you {
-    display: none;
-    animation: typing 3s steps(9) forwards;
-}
-
-.typewriter:hover, .thank-you:hover {
-    color: #ff0066;
-    text-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066, 0 0 45px #ff0066;
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+    .typewriter, .thank-you {
+        font-size: 5rem; /* Increase size for larger screens */
+    }
 }
