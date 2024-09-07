@@ -12,7 +12,7 @@ body {
 /* Container for Centering the Content */
 .container {
     text-align: center;
-    width: 100%;
+    width: auto;
     max-width: 600px; /* Max width for larger screens */
     padding: 0 20px; /* Padding to ensure space on smaller screens */
     position: relative;
